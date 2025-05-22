@@ -74,6 +74,11 @@ button {
     cursor: pointer;
 }
 
+.rainbow, .opacity {
+    background-color: black;
+    color: white;
+}
+
 .clear{
     margin-top: auto;
 }

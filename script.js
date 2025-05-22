@@ -15,6 +15,13 @@ let randomRGB = () => {
 
 let toggleOpacity = () => {
     opacityMode = !opacityMode;
+    if (opacityMode) {
+        opacityButton.style.backgroundColor = "lightgrey";
+        opacityButton.style.color = "black";
+    } else {
+        opacityButton.style.backgroundColor = "black";
+        opacityButton.style.color = "white";
+    }
 }
 
 let toggleRainbow = () => {
