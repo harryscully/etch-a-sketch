@@ -17,6 +17,8 @@ let generateDiv = function(n) {
     container.appendChild(div);
     div.addEventListener("mouseover", () => {
         div.style.backgroundColor = `rgb(${randomRGB()})`;
+        // div.style.backgroundColor = `black`;
+        div.style.opacity = `${Number(div.style.opacity) + 0.25}`;
     })
 };
 
