@@ -28,9 +28,10 @@ let toggleRainbow = () => {
 }
 
 let clearGrid = () => {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild)
-    };
+    const allDivs = document.querySelectorAll(".container > div")
+    allDivs.forEach( div => {
+        div.style.backgroundColor = "white";
+    })
 };
 
 let generateDiv = function(n) {
@@ -67,12 +68,15 @@ gridButton.addEventListener("click", () => {
     } else if (n > 64) {
         alert("Value for n too high");
     } else {
-        clearGrid();
+       while (container.firstChild) {
+        container.removeChild(container.firstChild)
+        };
         for (let i = 1; i <= n**2; i++) {
             generateDiv(n)
         };
     }
 })
+
 
 let opacityButton = document.querySelector(".opacity");
 
@@ -88,9 +92,6 @@ rainbowButton.addEventListener("click", () => {
 
 let clearButton = document.querySelector(".clear")
 
-clearButton = document.addEventListener("click", () => {
+clearButton.addEventListener("click", () => {
     clearGrid();
-    for (let i = 1; i <= n**2; i++) {
-            generateDiv(n)
-        };
 });
