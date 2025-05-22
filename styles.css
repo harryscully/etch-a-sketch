@@ -34,12 +34,5 @@ button {
 }
 
 .container > div {
-    /* height: 6.25%; */
     aspect-ratio: 1;
-    box-sizing: border-box;
-    border: 1px solid lightgrey;
-}
-
-.hovered {
-    background-color: black;
 }

@@ -1,11 +1,22 @@
 const container = document.querySelector(".container");
 
+let random255 = () => {
+    return Math.floor(Math.random()*256);
+}
+
+let randomRGB = () => {
+    const r = random255();
+    const g = random255();
+    const b = random255();
+    return `${r}, ${g}, ${b}`;
+}
+
 let generateDiv = function(n) {
     const div = document.createElement("div");
     div.style.height = `${100/n}%`;
     container.appendChild(div);
     div.addEventListener("mouseover", () => {
-        div.setAttribute("class", "hovered");
+        div.style.backgroundColor = `rgb(${randomRGB()})`;
     })
 };
 
