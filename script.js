@@ -1,30 +1,33 @@
 const container = document.querySelector(".container");
 
-let generateDiv = function() {
+let generateDiv = function(n) {
     const div = document.createElement("div");
+    div.style.height = `${100/n}%`;
     container.appendChild(div);
     div.addEventListener("mouseover", () => {
         div.setAttribute("class", "hovered");
     })
 };
 
-let n = 256;
-for (let i = 1; i <= n; i++) {
-    generateDiv()
+let n = 16;
+for (let i = 1; i <= n**2; i++) {
+    generateDiv(n)
 };
 
 let gridButton = document.querySelector("button");
 
 gridButton.addEventListener("click", () => {
-    let n = prompt("Pick a value of n for nxn grid (max n=100)", 16);
-    if (n > 100) {
+    let n = prompt("Pick a value of n for nxn grid (max n=64)", 16);
+    if (isNaN(n)) {
+        alert("Enter a number");
+    } else if (n > 64) {
         alert("Value for n too high");
     } else {
-        while (container.div) {
-            container.removeChild(div)
+        while (container.firstChild) {
+            container.removeChild(container.firstChild)
         };
         for (let i = 1; i <= n**2; i++) {
-            generateDiv()
+            generateDiv(n)
         };
     }
 })
