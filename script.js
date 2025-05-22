@@ -19,7 +19,19 @@ let toggleOpacity = () => {
 
 let toggleRainbow = () => {
     rainbowMode = !rainbowMode;
+    if (rainbowMode) {
+        rainbowButton.style.backgroundColor = `rgb(${randomRGB()})`;
+    } else {
+        rainbowButton.style.backgroundColor = "black";
+        rainbowButton.style.color = "white";
+    };
 }
+
+let clearGrid = () => {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    };
+};
 
 let generateDiv = function(n) {
     const div = document.createElement("div");
@@ -55,9 +67,7 @@ gridButton.addEventListener("click", () => {
     } else if (n > 64) {
         alert("Value for n too high");
     } else {
-        while (container.firstChild) {
-            container.removeChild(container.firstChild)
-        };
+        clearGrid();
         for (let i = 1; i <= n**2; i++) {
             generateDiv(n)
         };
@@ -74,4 +84,13 @@ let rainbowButton = document.querySelector(".rainbow");
 
 rainbowButton.addEventListener("click", () => {
     toggleRainbow();
+});
+
+let clearButton = document.querySelector(".clear")
+
+clearButton = document.addEventListener("click", () => {
+    clearGrid();
+    for (let i = 1; i <= n**2; i++) {
+            generateDiv(n)
+        };
 });

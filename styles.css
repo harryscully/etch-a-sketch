@@ -73,3 +73,7 @@ button {
     padding: 1em;
     cursor: pointer;
 }
+
+.clear{
+    margin-top: auto;
+}
