@@ -6,6 +6,9 @@ html, body {
 
 body {
     background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 h1 {
@@ -81,4 +84,13 @@ button {
 
 .clear{
     margin-top: auto;
+}
+
+p {
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: auto;
+    padding-bottom: 10px;
 }
