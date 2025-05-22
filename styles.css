@@ -5,11 +5,58 @@ html, body {
 }
 
 body {
+    background-color: lightgreen;
+}
+
+h1 {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 1em;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sketch-pad {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+}
+
+
+.container {
+    height: 70vh;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 1px 1px 20px green;
+}
+
+.container > div {
+    aspect-ratio: 1;
+}
+
+.control-panel {
     display: flex;
     flex-direction: column;
-    gap: 3em;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 1em 2em;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px green;
+
+}
+
+h2 {
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 button {
@@ -22,17 +69,4 @@ button {
     border-radius: 10px;
     padding: 1em;
     cursor: pointer;
-}
-
-.container {
-    height: 70vh;
-    aspect-ratio: 1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 1px solid grey;
-}
-
-.container > div {
-    aspect-ratio: 1;
 }
