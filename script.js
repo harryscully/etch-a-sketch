@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+let opacityMode = false;
 
 let random255 = () => {
     return Math.floor(Math.random()*256);
@@ -11,6 +12,10 @@ let randomRGB = () => {
     return `${r}, ${g}, ${b}`;
 }
 
+let toggleOpacity = () => {
+    opacityMode = !opacityMode;
+}
+
 let generateDiv = function(n) {
     const div = document.createElement("div");
     div.style.height = `${100/n}%`;
@@ -18,7 +23,12 @@ let generateDiv = function(n) {
     div.addEventListener("mouseover", () => {
         div.style.backgroundColor = `rgb(${randomRGB()})`;
         // div.style.backgroundColor = `black`;
-        div.style.opacity = `${Number(div.style.opacity) + 0.25}`;
+        if (opacityMode) {
+            div.style.opacity = `${Number(div.style.opacity) + 0.25}`;
+        } else {
+            div.style.opacity = "1";
+        }
+        
     })
 };
 
@@ -27,7 +37,7 @@ for (let i = 1; i <= n**2; i++) {
     generateDiv(n)
 };
 
-let gridButton = document.querySelector("button");
+let gridButton = document.querySelector(".grid");
 
 gridButton.addEventListener("click", () => {
     let n = prompt("Pick a value of n for nxn grid (max n=64)", 16);
@@ -43,4 +53,10 @@ gridButton.addEventListener("click", () => {
             generateDiv(n)
         };
     }
+})
+
+let opacityButton = document.querySelector(".opacity");
+
+opacityButton.addEventListener("click", () => {
+    toggleOpacity();
 })
