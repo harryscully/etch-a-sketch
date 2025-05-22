@@ -25,3 +25,7 @@ body {
     box-sizing: border-box;
     border: 1px solid lightgrey;
 }
+
+.hovered {
+    background-color: black;
+}
